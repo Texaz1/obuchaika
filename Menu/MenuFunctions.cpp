@@ -9,3 +9,19 @@ void EKors::exit() {
 void EKors::study() {
 
 }
+
+void EKors::read_pushkin() {
+
+}
+
+void EKors::read_lermontov() {
+
+}
+
+void EKors::read_krilov() {
+
+}
+
+void EKors::read_go_back() {
+
+}
