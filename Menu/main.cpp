@@ -20,25 +20,25 @@ int main() {
 	};
 	const int read_size = sizeof(read_children) / sizeof(read_children[0]);
 
-	EKors::MenuItem study = { "1 - Русские писатели", EKors::study };
+	EKors::MenuItem read = { "1 - Русские писатели", EKors::show_menu, read_children, read_size };
 	EKors::MenuItem exit = { "0 - Завершить чтение", EKors::exit };
 
-	EKors::MenuItem* main_children[] = { &exit, &study };
+	EKors::MenuItem* main_children[] = { &exit, &read };
 	const int main_size = sizeof(main_children) / sizeof(main_children[0]);
 
-	int user_input;
+	EKors::MenuItem main = { nullptr, EKors::show_menu, main_children, main_size };
+
+	read_pushkin.parent = &read;
+	read_lermontov.parent = &read;
+	read_krilov.parent = &read;
+	read_go_back.parent = &read;
+
+	read.parent = &main;
+	exit.parent = &main;
+
+	const EKors::MenuItem* current = &main;
 	do {
-		std::cout << "Привет" << std::endl;
-		for (int i = 1; i < main_size; i++) {
-			std::cout << main_children[i]->title << std::endl;
-		}
-		std::cout << main_children[0]->title << std::endl;
-		std::cout << "Обучайка: ";
-
-		std::cin >> user_input;
-		main_children[user_input]->func();
-
-		std::cout << std::endl;
+		current = current->func(current);
 	} while (true);
 
 	return 0;
