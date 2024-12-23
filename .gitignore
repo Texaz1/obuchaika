@@ -1,5 +1,7 @@
 .*
 !.gitignore
-
+.vcxproj/
+.vcxproj.filters/
+.vcxproj.user/
 .vs/
 x64/
