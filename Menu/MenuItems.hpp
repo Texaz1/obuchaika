@@ -12,4 +12,9 @@ namespace EKors{
 	extern const MenuItem READ_LERMONTOV;
 	extern const MenuItem READ_KRILOV;
 	extern const MenuItem READ_GO_BACK;
+
+	extern const MenuItem PUSHKIN_DUBROVSKI;
+	extern const MenuItem PUSHKIN_ONEGIN;
+	extern const MenuItem PUSHKIN_ZIMNI_VECHER;
+	extern const MenuItem PUSHKIN_GO_BACK;
 }

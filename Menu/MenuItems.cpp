@@ -4,8 +4,31 @@
 
 #include "MenuFunctions.hpp"
 
-const EKors::MenuItem EKors::READ_PUSHKIN = { 
-	"1 - Читать Пушкина", EKors::read_pushkin, &EKors::READ
+const EKors::MenuItem EKors::PUSHKIN_DUBROVSKI = {
+	"1 - Дубровский", EKors::pushkin_dubrovsri, &EKors::READ_PUSHKIN
+};
+const EKors::MenuItem EKors::PUSHKIN_ONEGIN = {
+	"2 - Евгений Онегин", EKors::pushkin_onegin, &EKors::READ_PUSHKIN
+};
+const EKors::MenuItem EKors::PUSHKIN_ZIMNI_VECHER = {
+	"3 - Зимний вечер", EKors::pushkin_zimni_vecher, &EKors::READ_PUSHKIN
+};
+const EKors::MenuItem EKors::PUSHKIN_GO_BACK = {
+	"0 - Выйти в предыдущее меню", EKors::pushkin_go_back, &EKors::READ_PUSHKIN
+};
+
+namespace {
+	const EKors::MenuItem* const pushkin_children[] = {
+		&EKors::PUSHKIN_GO_BACK,
+		&EKors::PUSHKIN_DUBROVSKI,
+		&EKors::PUSHKIN_ONEGIN,
+		&EKors::PUSHKIN_ZIMNI_VECHER
+	};
+	const int pushkin_size = sizeof(pushkin_children) / sizeof(pushkin_children[0]);
+}
+
+const EKors::MenuItem EKors::READ_PUSHKIN = {
+	"1 - Читать Пушкина", EKors::read_pushkin, &EKors::READ, pushkin_children, pushkin_size
 };
 const EKors::MenuItem EKors::READ_LERMONTOV = {
 	"2 - Читать Лермонтова", EKors::read_lermontov, &EKors::READ

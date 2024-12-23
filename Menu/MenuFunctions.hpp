@@ -11,4 +11,9 @@ namespace EKors {
 	const MenuItem* read_lermontov(const MenuItem* current);
 	const MenuItem* read_krilov(const MenuItem* current);
 	const MenuItem* read_go_back(const MenuItem* current);
+
+	const MenuItem* pushkin_dubrovsri(const MenuItem* current);
+	const MenuItem* pushkin_onegin(const MenuItem* current);
+	const MenuItem* pushkin_zimni_vecher(const MenuItem* current);
+	const MenuItem* pushkin_go_back(const MenuItem* current);
 }
