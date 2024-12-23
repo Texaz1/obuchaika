@@ -8,6 +8,8 @@
 int main() {
 	std::setlocale(LC_ALL, "");
 
+	std::cout << "Привет" << std::endl;
+
 	const EKors::MenuItem* current = &EKors::MAIN;
 	do {
 		current = current->func(current);
